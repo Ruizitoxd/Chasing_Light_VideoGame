@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Lightsouls_Lobby_Controller : MonoBehaviour
-{   
+{
     //Velocidad
-    public float Speed;
+    public float WalkSpeed = 5f;
+    public float RunSpeed = 9f;
     //Altura salto
     public float JumpForce;
 
@@ -23,6 +24,8 @@ public class Lightsouls_Lobby_Controller : MonoBehaviour
 
     private Animator Animator;
 
+    private bool isRunning;
+
     //Variable para guardar la ultima direccion
     private int LastDirection = 1;
 
@@ -38,6 +41,9 @@ public class Lightsouls_Lobby_Controller : MonoBehaviour
     void Update()
     { //Input del teclado
         Horizontal = Input.GetAxisRaw("Horizontal");
+
+        // Detectar si corre (Shift + dirección)
+        isRunning = Input.GetKey(KeyCode.LeftShift) && Horizontal != 0;
 
 
 
@@ -56,6 +62,13 @@ public class Lightsouls_Lobby_Controller : MonoBehaviour
 
 
         Animator.SetBool("Walk", Horizontal != 0.0f);
+
+        Animator.SetBool("Run", isRunning);
+
+        Animator.SetBool("Grounded", Grounded);
+
+        Animator.SetFloat("YVelocity", Rigidbody2D.velocity.y);
+
 
         Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
         if (Physics2D.Raycast(raycast.transform.position, Vector3.down, 0.1f, GroundLayer))
@@ -83,7 +96,9 @@ public class Lightsouls_Lobby_Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = new Vector2(Horizontal * Speed, Rigidbody2D.velocity.y);
+        float currentSpeed = isRunning ? RunSpeed : WalkSpeed;
+        Rigidbody2D.velocity = new Vector2(Horizontal * currentSpeed, Rigidbody2D.velocity.y);
+
     }
-        
+
 }
