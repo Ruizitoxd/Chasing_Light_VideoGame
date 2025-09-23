@@ -259,7 +259,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -358,9 +358,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -644631907
+  m_SortingLayerID: -1869315837
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ac86072f9cc86834eb5662d8cb72cf11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -452,10 +452,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1193441761
-  m_SortingLayer: 3
+  m_SortingLayerID: -1325611559
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7551218612100083373, guid: d6ff522707498e84c83d2b6f290d6a3f, type: 3}
+  m_Sprite: {fileID: 7551218612100083373, guid: d6ff522707498e84c83d2b6f290d6a3f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -498,7 +499,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 6200000, guid: 06e6aaeb33239af45ad1df48560f7ec5, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -526,7 +527,7 @@ MonoBehaviour:
   JumpForce: 12
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   raycast: {fileID: 1446838963}
 --- !u!70 &261672652
 CapsuleCollider2D:
@@ -618,7 +619,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -693,7 +694,7 @@ GameObject:
   - component: {fileID: 522144954}
   - component: {fileID: 522144953}
   - component: {fileID: 522144952}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Suelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +710,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 522144951}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 06e6aaeb33239af45ad1df48560f7ec5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -783,7 +784,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -823,7 +824,7 @@ GameObject:
   - component: {fileID: 613173146}
   - component: {fileID: 613173145}
   - component: {fileID: 613173144}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Suelo_piso2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,7 +869,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -953,7 +954,7 @@ GameObject:
   - component: {fileID: 643153132}
   - component: {fileID: 643153131}
   - component: {fileID: 643153130}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Cloud-7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1044,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d2f60b0427e508f45a985503cd96c5d9, type: 3}
@@ -1205,7 +1206,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -1418,7 +1419,7 @@ GameObject:
   - component: {fileID: 1058328665}
   - component: {fileID: 1058328664}
   - component: {fileID: 1058328666}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1464,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c62e6ffc8d0e94142b29c8d270766aa4, type: 3}
@@ -1554,7 +1555,7 @@ GameObject:
   - component: {fileID: 1107629254}
   - component: {fileID: 1107629256}
   - component: {fileID: 1107629255}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Suelo_piso3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1614,7 +1615,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -1718,7 +1719,7 @@ GameObject:
   - component: {fileID: 1389784309}
   - component: {fileID: 1389784311}
   - component: {fileID: 1389784310}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Suelo_piso2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1778,7 +1779,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -2089,7 +2090,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -2174,7 +2175,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1495807305
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1861422925, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
   m_Color: {r: 0.9339623, g: 0.85588735, b: 0.8062033, a: 1}
@@ -2318,7 +2319,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -2343,7 +2344,7 @@ GameObject:
   - component: {fileID: 1821124074}
   - component: {fileID: 1821124073}
   - component: {fileID: 1821124072}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Suelo_piso2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2388,7 +2389,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -2473,7 +2474,7 @@ GameObject:
   - component: {fileID: 1865405929}
   - component: {fileID: 1865405928}
   - component: {fileID: 1865405927}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Suelo_piso1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2518,7 +2519,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -2603,7 +2604,7 @@ GameObject:
   - component: {fileID: 1984712761}
   - component: {fileID: 1984712760}
   - component: {fileID: 1984712759}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Suelo_piso2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2648,7 +2649,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
@@ -2733,7 +2734,7 @@ GameObject:
   - component: {fileID: 2015788046}
   - component: {fileID: 2015788045}
   - component: {fileID: 2015788044}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Cloud-7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2823,7 +2824,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d2f60b0427e508f45a985503cd96c5d9, type: 3}
@@ -2953,7 +2954,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1495807305
+  m_SortingLayerID: -44025399
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136423050, guid: 524805d0bacf5e045893c82ddfd15ef5, type: 3}
