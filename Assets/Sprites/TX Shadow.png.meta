@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TX Shadow_0
+      name: TX Shadow_cube
       rect:
         serializedVersion: 2
         x: 32
@@ -118,7 +118,7 @@ TextureImporter:
         width: 39
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_1
+      name: TX Shadow_chest
       rect:
         serializedVersion: 2
         x: 97
@@ -139,7 +139,7 @@ TextureImporter:
         width: 36
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_2
+      name: TX Shadow_crate
       rect:
         serializedVersion: 2
         x: 160
@@ -160,7 +160,7 @@ TextureImporter:
         width: 39
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_3
+      name: TX Shadow_rune_pillar_X2
       rect:
         serializedVersion: 2
         x: 228
@@ -181,7 +181,7 @@ TextureImporter:
         width: 31
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,7 +194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_4
+      name: TX Shadow Stone Bench S
       rect:
         serializedVersion: 2
         x: 295
@@ -202,7 +202,7 @@ TextureImporter:
         width: 60
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,7 +215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_5
+      name: TX Shadow Stone Bench W
       rect:
         serializedVersion: 2
         x: 387
@@ -223,7 +223,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_6
+      name: TX Shadow Statue
       rect:
         serializedVersion: 2
         x: 446
@@ -244,7 +244,7 @@ TextureImporter:
         width: 38
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,7 +257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_7
+      name: TX Shadow Chest Opened
       rect:
         serializedVersion: 2
         x: 97
@@ -265,7 +265,7 @@ TextureImporter:
         width: 38
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,7 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_8
+      name: TX Shadow Crate Small
       rect:
         serializedVersion: 2
         x: 163
@@ -286,7 +286,7 @@ TextureImporter:
         width: 31
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,7 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_9
+      name: TX Shadow Rune Pillar X3
       rect:
         serializedVersion: 2
         x: 228
@@ -307,7 +307,7 @@ TextureImporter:
         width: 36
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,7 +320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_10
+      name: TX Shadow Stone Coffin Hori
       rect:
         serializedVersion: 2
         x: 288
@@ -328,7 +328,7 @@ TextureImporter:
         width: 67
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,7 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_11
+      name: TX Shadow Stone Bench E
       rect:
         serializedVersion: 2
         x: 393
@@ -349,7 +349,7 @@ TextureImporter:
         width: 25
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,7 +362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_12
+      name: TX Shadow Stone Lantern
       rect:
         serializedVersion: 2
         x: 453
@@ -370,7 +370,7 @@ TextureImporter:
         width: 32
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_13
+      name: TX Shadow Wooden Door
       rect:
         serializedVersion: 2
         x: 29
@@ -391,7 +391,7 @@ TextureImporter:
         width: 47
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -412,7 +412,7 @@ TextureImporter:
         width: 6
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -425,7 +425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_15
+      name: TX Shadow Road Sign E
       rect:
         serializedVersion: 2
         x: 102
@@ -433,7 +433,7 @@ TextureImporter:
         width: 26
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,7 +446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_16
+      name: TX Shadow Barrel
       rect:
         serializedVersion: 2
         x: 163
@@ -454,7 +454,7 @@ TextureImporter:
         width: 30
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,7 +467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_17
+      name: TX Shadow Stone Coffin Vert
       rect:
         serializedVersion: 2
         x: 288
@@ -475,7 +475,7 @@ TextureImporter:
         width: 35
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,15 +488,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_18
+      name: TX Shadow Wooden Door Opened
       rect:
         serializedVersion: 2
         x: 29
         y: 293
-        width: 17
+        width: 46
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,28 +509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_19
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 293
-        width: 17
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14cce04aa7c253c43994242f220275d0
-      internalID: 1131245146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Shadow_20
+      name: TX Shadow Rune Pillar Broken
       rect:
         serializedVersion: 2
         x: 227
@@ -538,7 +517,7 @@ TextureImporter:
         width: 31
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -551,7 +530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_21
+      name: TX Shadow Pillar
       rect:
         serializedVersion: 2
         x: 352
@@ -559,7 +538,7 @@ TextureImporter:
         width: 44
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -572,7 +551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_22
+      name: TX Shadow Pillar Broken
       rect:
         serializedVersion: 2
         x: 416
@@ -580,7 +559,7 @@ TextureImporter:
         width: 35
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -593,7 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_23
+      name: TX Shadow Bridge Gate
       rect:
         serializedVersion: 2
         x: 480
@@ -601,7 +580,7 @@ TextureImporter:
         width: 32
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -614,7 +593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_24
+      name: TX Shadow Road Sign W
       rect:
         serializedVersion: 2
         x: 100
@@ -622,7 +601,7 @@ TextureImporter:
         width: 26
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -635,7 +614,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_25
+      name: TX Shadow Pot A
       rect:
         serializedVersion: 2
         x: 165
@@ -643,7 +622,7 @@ TextureImporter:
         width: 23
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -656,7 +635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_26
+      name: TX Shadow Gravestone A
       rect:
         serializedVersion: 2
         x: 225
@@ -664,7 +643,7 @@ TextureImporter:
         width: 35
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -677,7 +656,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_27
+      name: TX Shadow Gravestone C
       rect:
         serializedVersion: 2
         x: 289
@@ -685,7 +664,7 @@ TextureImporter:
         width: 32
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -706,7 +685,7 @@ TextureImporter:
         width: 99
         height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -719,15 +698,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_29
+      name: TX Shadow Tileset Wall 1
       rect:
         serializedVersion: 2
         x: 480
-        y: 128
-        width: 18
-        height: 118
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -740,7 +719,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_30
+      name: TX Shadow Pot B
       rect:
         serializedVersion: 2
         x: 164
@@ -748,7 +727,7 @@ TextureImporter:
         width: 28
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -761,7 +740,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_31
+      name: TX Shadow Gravestone B
       rect:
         serializedVersion: 2
         x: 231
@@ -769,7 +748,7 @@ TextureImporter:
         width: 30
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -782,7 +761,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_32
+      name: TX Shadow Stone Cube
       rect:
         serializedVersion: 2
         x: 288
@@ -790,7 +769,7 @@ TextureImporter:
         width: 41
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -803,7 +782,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_33
+      name: TX Shadow Pot C
       rect:
         serializedVersion: 2
         x: 166
@@ -811,7 +790,7 @@ TextureImporter:
         width: 22
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -824,7 +803,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_35
+      name: TX Shadow Well
       rect:
         serializedVersion: 2
         x: 420
@@ -832,7 +811,7 @@ TextureImporter:
         width: 58
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -845,7 +824,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_36
+      name: TX Shadow - Stone 07
       rect:
         serializedVersion: 2
         x: 3
@@ -853,7 +832,7 @@ TextureImporter:
         width: 60
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -866,7 +845,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_37
+      name: TX Shadow - Stone 01
       rect:
         serializedVersion: 2
         x: 10
@@ -874,7 +853,7 @@ TextureImporter:
         width: 12
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -887,7 +866,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_38
+      name: TX Shadow - Stone 02
       rect:
         serializedVersion: 2
         x: 40
@@ -895,7 +874,7 @@ TextureImporter:
         width: 17
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -908,7 +887,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_39
+      name: TX Shadow - Stone 03
       rect:
         serializedVersion: 2
         x: 69
@@ -916,7 +895,7 @@ TextureImporter:
         width: 24
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -929,7 +908,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_40
+      name: TX Shadow - Stone 04
       rect:
         serializedVersion: 2
         x: 100
@@ -937,7 +916,7 @@ TextureImporter:
         width: 25
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -950,7 +929,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_41
+      name: TX Shadow - Stone 05
       rect:
         serializedVersion: 2
         x: 130
@@ -958,7 +937,7 @@ TextureImporter:
         width: 29
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -971,7 +950,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Shadow_42
+      name: TX Shadow - Stone 06
       rect:
         serializedVersion: 2
         x: 162
@@ -979,7 +958,7 @@ TextureImporter:
         width: 29
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -987,6 +966,69 @@ TextureImporter:
       bones: []
       spriteID: cfa4e042a5409b74aad2e1f44138bd52
       internalID: -2011486544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow Tileset Wall 2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d369590b688671a4ca4cbdee245f204d
+      internalID: -1303630479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow Tileset Wall 3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea227b67e0bac9346a4cd617a38ebc7a
+      internalID: -135221252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow Tileset Wall 4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dad90188a0bdcd4a82d2140a5c479ae
+      internalID: -1398771522
       vertices: []
       indices: 
       edges: []
@@ -1002,49 +1044,52 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TX Shadow_0: -871421516
-      TX Shadow_1: 1870176563
-      TX Shadow_10: -1880766870
-      TX Shadow_11: 1871071174
-      TX Shadow_12: -835705304
-      TX Shadow_13: -962697317
+      TX Shadow - Stone 01: -1284387022
+      TX Shadow - Stone 02: -126249734
+      TX Shadow - Stone 03: -198612581
+      TX Shadow - Stone 04: 1504715502
+      TX Shadow - Stone 05: 1214173863
+      TX Shadow - Stone 06: -2011486544
+      TX Shadow - Stone 07: -1806093204
+      TX Shadow Barrel: 734469450
+      TX Shadow Bridge Gate: 1754511863
+      TX Shadow Chest Opened: -337327502
+      TX Shadow Crate Small: 241238343
+      TX Shadow Gravestone A: 2063728865
+      TX Shadow Gravestone B: -438264748
+      TX Shadow Gravestone C: 1287060730
+      TX Shadow Pillar: 94949540
+      TX Shadow Pillar Broken: -20907116
+      TX Shadow Pot A: 55122117
+      TX Shadow Pot B: 581956481
+      TX Shadow Pot C: 699577843
+      TX Shadow Road Sign E: -831700514
+      TX Shadow Road Sign W: 204185282
+      TX Shadow Rune Pillar Broken: -216483859
+      TX Shadow Rune Pillar X3: -929301135
+      TX Shadow Statue: 1827159925
+      TX Shadow Stone Bench E: 1871071174
+      TX Shadow Stone Bench S: -875734351
+      TX Shadow Stone Bench W: -1984324751
+      TX Shadow Stone Coffin Hori: -1880766870
+      TX Shadow Stone Coffin Vert: 2083930156
+      TX Shadow Stone Cube: 1241109421
+      TX Shadow Stone Lantern: -835705304
+      TX Shadow Tileset Wall 1: 1700381294
+      TX Shadow Tileset Wall 2: -1303630479
+      TX Shadow Tileset Wall 3: -135221252
+      TX Shadow Tileset Wall 4: -1398771522
+      TX Shadow Well: 2016623915
+      TX Shadow Wooden Door: -962697317
+      TX Shadow Wooden Door Opened: 1126695227
       TX Shadow_14: 415118573
-      TX Shadow_15: -831700514
-      TX Shadow_16: 734469450
-      TX Shadow_17: 2083930156
-      TX Shadow_18: 1126695227
       TX Shadow_19: 1131245146
-      TX Shadow_2: 153565810
-      TX Shadow_20: -216483859
-      TX Shadow_21: 94949540
-      TX Shadow_22: -20907116
-      TX Shadow_23: 1754511863
-      TX Shadow_24: 204185282
-      TX Shadow_25: 55122117
-      TX Shadow_26: 2063728865
-      TX Shadow_27: 1287060730
       TX Shadow_28: -1701100649
-      TX Shadow_29: 1700381294
-      TX Shadow_3: 1199151631
-      TX Shadow_30: 581956481
-      TX Shadow_31: -438264748
-      TX Shadow_32: 1241109421
-      TX Shadow_33: 699577843
       TX Shadow_34: 842627271
-      TX Shadow_35: 2016623915
-      TX Shadow_36: -1806093204
-      TX Shadow_37: -1284387022
-      TX Shadow_38: -126249734
-      TX Shadow_39: -198612581
-      TX Shadow_4: -875734351
-      TX Shadow_40: 1504715502
-      TX Shadow_41: 1214173863
-      TX Shadow_42: -2011486544
-      TX Shadow_5: -1984324751
-      TX Shadow_6: 1827159925
-      TX Shadow_7: -337327502
-      TX Shadow_8: 241238343
-      TX Shadow_9: -929301135
+      TX Shadow_chest: 1870176563
+      TX Shadow_crate: 153565810
+      TX Shadow_cube: -871421516
+      TX Shadow_rune_pillar_X2: 1199151631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
