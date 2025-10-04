@@ -451,7 +451,7 @@ TextureImporter:
         serializedVersion: 2
         x: 29
         y: 293
-        width: 9
+        width: 37
         height: 53
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -462,27 +462,6 @@ TextureImporter:
       bones: []
       spriteID: 5d9259ccae1c23843abe29d55f3cff62
       internalID: 263563609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Props_23
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 293
-        width: 9
-        height: 53
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1e8228754906f54f8c901d64e5dac8a
-      internalID: -1601440291
       vertices: []
       indices: 
       edges: []
@@ -1126,7 +1105,7 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
