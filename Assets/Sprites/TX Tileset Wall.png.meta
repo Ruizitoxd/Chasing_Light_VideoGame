@@ -365,12 +365,12 @@ TextureImporter:
       name: TX Tileset Wall_12
       rect:
         serializedVersion: 2
-        x: 316
-        y: 310
-        width: 4
-        height: 2
+        x: 197
+        y: 274
+        width: 22
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -391,7 +391,7 @@ TextureImporter:
         width: 8
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -454,7 +454,7 @@ TextureImporter:
         width: 8
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -462,6 +462,27 @@ TextureImporter:
       bones: []
       spriteID: a0314a0729854704fa0553462286bdb4
       internalID: 1216942801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Tileset Wall_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 170
+        width: 64
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9e52eaba57a7e46b1b690fe335a6e2
+      internalID: 2076344143
       vertices: []
       indices: 
       edges: []
@@ -486,6 +507,7 @@ TextureImporter:
       TX Tileset Wall_14: 1876872732
       TX Tileset Wall_15: -1361569980
       TX Tileset Wall_16: 1216942801
+      TX Tileset Wall_17: 2076344143
       TX Tileset Wall_2: 331171444
       TX Tileset Wall_3: -839243881
       TX Tileset Wall_4: 346603122
