@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 2683982064941513661}
   - component: {fileID: 4575851620311682178}
   - component: {fileID: 6712949786423462656}
+  - component: {fileID: 5362397767684520694}
   m_Layer: 20
   m_Name: Personaje
   m_TagString: Player
@@ -466,6 +467,23 @@ MonoBehaviour:
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &5362397767684520694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367246713717726156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d359f038b832342a93bfb9c16aed0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  cameraPrefab: {fileID: 136487423027512675, guid: 83f87e4f7c6daa544a67eb47486c4083,
+    type: 3}
 --- !u!1001 &6941758809394280346
 PrefabInstance:
   m_ObjectHideFlags: 0
