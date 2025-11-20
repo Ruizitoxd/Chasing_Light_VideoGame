@@ -41,15 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Fondo
+  - name: Decoraciones Fondo
     uniqueID: 2425651459
     locked: 0
   - name: Suelo
     uniqueID: 4250941897
     locked: 0
-  - name: Layer 3
-    uniqueID: 4189426099
-    locked: 0
   - name: Player
     uniqueID: 2969355737
+    locked: 0
+  - name: Decoraciones Prop
+    uniqueID: 4189426099
     locked: 0

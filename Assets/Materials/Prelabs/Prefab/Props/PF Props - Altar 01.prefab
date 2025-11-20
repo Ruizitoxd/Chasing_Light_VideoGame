@@ -433,11 +433,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6250821296113964330}
+  - {fileID: 9183256227791019032}
+  - {fileID: 6868958710751573116}
+  - {fileID: 2128395779313173791}
   lerpSpeed: 3
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7947911505844789836
 GameObject:
   m_ObjectHideFlags: 0

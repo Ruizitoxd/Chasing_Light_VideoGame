@@ -12,7 +12,7 @@ namespace Cainos.PixelArtTopDown_Basic
         public float lerpSpeed;
 
         private Color curColor;
-        private Color targetColor;
+        [SerializeField] private Color targetColor;
 
         private void Awake()
         {
