@@ -3,22 +3,52 @@ using UnityEngine;
 
 public class PlayerHealth : NetworkBehaviour
 {
-    [SyncVar] public bool isDead = false;
+    [SyncVar(hook = nameof(OnHealthChanged))]
+    public int health = 100;
 
-    public void Kill()
+    public int maxHealth = 100;
+
+    public bool isDead = false;
+
+    public void TakeDamage(int amount)
     {
-        if (isDead) return;
+        if (!isServer || isDead) return;
 
+        health -= amount;
+
+        if (health <= 0)
+        {
+            health = 0;
+            Die();
+        }
+    }
+
+    void OnHealthChanged(int oldValue, int newValue)
+    {
+        // Aquí puedes actualizar UI si quieres
+    }
+
+    [Server]
+    void Die()
+    {
         isDead = true;
 
-        // Aquí pon lo que quieras que pase cuando muere
+        // Desactivar al jugador al morir
         RpcOnDeath();
     }
 
     [ClientRpc]
     void RpcOnDeath()
     {
-        Debug.Log("Jugador murió");
-        // Puedes desactivar modelo, animación, etc
+        gameObject.SetActive(false);
     }
+
+    [Server]
+    public void Kill()
+    {
+        if (isDead) return;
+        health = 0;
+        Die();
+    }
+
 }

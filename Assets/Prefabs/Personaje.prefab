@@ -118,54 +118,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2253596230247055682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2451196035702133680
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8982865887981751209}
-  - component: {fileID: 8180291213279253606}
-  m_Layer: 20
-  m_Name: KillerHitbox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &8982865887981751209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2451196035702133680}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2253596230247055682}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8180291213279253606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2451196035702133680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e0b50bb635d1e44b8a16c8d4f9205d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  killDistance: 5
 --- !u!1 &4347271157662883835
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +243,6 @@ Transform:
   - {fileID: 2305957898100321882}
   - {fileID: 6043352816616262750}
   - {fileID: 5054818369657094794}
-  - {fileID: 8982865887981751209}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5222807598054554045
@@ -315,8 +266,6 @@ MonoBehaviour:
   grapplingHook: {fileID: 5834400445907539560}
   hookObject: {fileID: 3849851802776462441, guid: d2ef83c921515304c99597ce216b449f,
     type: 3}
-  playerHealth: {fileID: 1917881213131113064}
-  killerHitbox: {fileID: 2451196035702133680}
 --- !u!114 &883561459471542702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +289,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367246713717726156}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 842e397ce27837440b689b74eb93ba3e, type: 3}
   m_Name: 
@@ -348,11 +297,13 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  hookPrefab: {fileID: 3849851802776462441, guid: d2ef83c921515304c99597ce216b449f,
+  attackRange: 30
+  damage: 100
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 1048576
+  stabEffect: {fileID: 7756941794914709255, guid: 5dad430949a71074896933a0279d2cec,
     type: 3}
-  firePoint: {fileID: 2305957898100321882}
-  hookSpeed: 20
-  pullSpeed: 10
 --- !u!114 &1917881213131113064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +319,8 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  health: 100
+  maxHealth: 100
   isDead: 0
 --- !u!61 &2663697674837363012
 BoxCollider2D:
@@ -401,7 +354,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
+  m_Offset: {x: 0, y: -0.6}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -412,7 +365,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &1043194516498114257
 Rigidbody2D:

@@ -13,21 +13,13 @@ public class PlayerRole : NetworkBehaviour
     public GameObject modeloSuperviviente;
 
     [Header("Arma / Habilidad del Asesino")]
-    public GrapplingHook_Mirror grapplingHook;
+    public GrapplingKnife_Mirror grapplingHook; // Versión apuñalamiento
     public GameObject hookObject;
-
-    [Header("Sistemas del Superviviente")]
-    public PlayerHealth playerHealth;
-
-    [Header("Sistemas del Asesino")]
-    public GameObject killerHitbox;
-
-
 
     void OnRolAsignado(RolJugador oldRol, RolJugador newRol)
     {
         // =============================
-        //  ACTIVAR MODELADOS
+        //  ACTIVAR MODELOS
         // =============================
         modeloAsesino.SetActive(newRol == RolJugador.Asesino);
         modeloSuperviviente.SetActive(newRol == RolJugador.Superviviente);
@@ -41,60 +33,29 @@ public class PlayerRole : NetworkBehaviour
             gameObject.tag = "Player";
 
         // =============================
-        //  CONFIGURAR GANCHO
+        //  CONFIGURAR HERRAMIENTAS DEL ASESINO
         // =============================
         if (newRol == RolJugador.Asesino)
         {
-            if (isLocalPlayer)
-            {
-                if (grapplingHook) grapplingHook.enabled = true;
-                if (hookObject) hookObject.SetActive(true);
-            }
-            else if (isServer)
-            {
-                if (grapplingHook) grapplingHook.enabled = true;
-                if (hookObject) hookObject.SetActive(true);
-            }
-            else
-            {
-                if (grapplingHook) grapplingHook.enabled = false;
-                if (hookObject) hookObject.SetActive(true);
-            }
+            if (grapplingHook) grapplingHook.enabled = true;
+            if (hookObject) hookObject.SetActive(true);
         }
         else
         {
             if (grapplingHook) grapplingHook.enabled = false;
             if (hookObject) hookObject.SetActive(false);
         }
-
-        // =============================
-        //  CONFIGURAR HABILIDADES
-        // =============================
-        if (newRol == RolJugador.Asesino)
-        {
-            // Activa hitbox de asesino
-            if (killerHitbox) killerHitbox.SetActive(true);
-
-            // Desactiva vida del asesino
-            if (playerHealth) playerHealth.enabled = false;
-        }
-        else // Superviviente
-        {
-            // Activa vida
-            if (playerHealth) playerHealth.enabled = true;
-
-            // Desactiva hitbox del asesino
-            if (killerHitbox) killerHitbox.SetActive(false);
-        }
     }
 
     public override void OnStartClient()
     {
+        base.OnStartClient();
         OnRolAsignado(rol, rol);
     }
 
     public override void OnStartLocalPlayer()
     {
+        base.OnStartLocalPlayer();
         OnRolAsignado(rol, rol);
     }
 }
