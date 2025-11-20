@@ -3,51 +3,76 @@ using UnityEngine;
 
 public class HookProjectile : NetworkBehaviour
 {
-    [HideInInspector] public GrapplingHook_Mirror owner;
-    private Vector2 target;
+    private GrapplingHook_Mirror owner;
+    private Vector2 targetPos;
     private float speed;
+    private bool hitSomething = false;
 
-    public void Initialize(GrapplingHook_Mirror owner, Vector2 target, float speed)
+    // Inicializar el gancho con el dueño y velocidad
+    public void Initialize(GrapplingHook_Mirror owner, Vector2 targetPos, float speed)
     {
         this.owner = owner;
-        this.target = target;
+        this.targetPos = targetPos;
         this.speed = speed;
     }
 
-    private void Update()
+    void Update()
     {
-        if (!isServer) return;
+        if (!isServer || hitSomething) return;
 
-        // Movimiento del gancho
+        // Mover gancho hacia targetPos
         transform.position = Vector2.MoveTowards(
             transform.position,
-            target,
+            targetPos,
             speed * Time.deltaTime
         );
 
-        // Si llegó sin pegar a nadie, destruir
-        if (Vector2.Distance(transform.position, target) < 0.1f)
+        // Destruir si llegó al target sin golpear
+        if (Vector2.Distance(transform.position, targetPos) < 0.2f)
         {
             NetworkServer.Destroy(gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isServer) return;
+        if (!isServer || hitSomething) return;
 
-        if (col.CompareTag("Player"))
+        // Solo interactuar con jugadores
+        if (other.CompareTag("Player"))
         {
-            // Evitar enganchar al asesino mismo
-            if (col.transform == owner.transform)
-                return;
+            NetworkIdentity victim = other.GetComponent<NetworkIdentity>();
 
-            NetworkIdentity victim = col.GetComponent<NetworkIdentity>();
+            // Evitar engancharse a sí mismo
+            if (victim != null && owner != null && victim.netId != owner.GetComponent<NetworkIdentity>().netId)
+            {
+                hitSomething = true; // detiene el movimiento
 
-            if (victim != null)
+                // Avisar al servidor que se enganchó
                 owner.Server_HookHit(victim);
 
-            NetworkServer.Destroy(gameObject);
+                // Apagar visual del gancho para todos los clientes
+                RpcDisableVisual();
+
+                // Destruir gancho un poco después para asegurar que RPC se procese
+                Invoke(nameof(Server_DestroySelf), 0.1f);
+            }
         }
+    }
+
+    [ClientRpc]
+    void RpcDisableVisual()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr) sr.enabled = false;
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col) col.enabled = false;
+    }
+
+    [Server]
+    void Server_DestroySelf()
+    {
+        NetworkServer.Destroy(gameObject);
     }
 }

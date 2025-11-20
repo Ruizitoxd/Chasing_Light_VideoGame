@@ -13,44 +13,88 @@ public class PlayerRole : NetworkBehaviour
     public GameObject modeloSuperviviente;
 
     [Header("Arma / Habilidad del Asesino")]
-    public GrapplingHook_Mirror  grapplingHook;   // Script del gancho
-    public GameObject hookObject;         // El objeto visual del gancho (si tienes uno)
+    public GrapplingHook_Mirror grapplingHook;
+    public GameObject hookObject;
+
+    [Header("Sistemas del Superviviente")]
+    public PlayerHealth playerHealth;
+
+    [Header("Sistemas del Asesino")]
+    public GameObject killerHitbox;
+
+
 
     void OnRolAsignado(RolJugador oldRol, RolJugador newRol)
     {
-        // 🔹 Activar el modelo correcto
+        // =============================
+        //  ACTIVAR MODELADOS
+        // =============================
         modeloAsesino.SetActive(newRol == RolJugador.Asesino);
         modeloSuperviviente.SetActive(newRol == RolJugador.Superviviente);
 
-        // 🔹 Activar el gancho SOLO si es Asesino y SOLO en el jugador local
-        if (isLocalPlayer)
-        {
-            if (grapplingHook != null)
-                grapplingHook.enabled = (newRol == RolJugador.Asesino);
+        // =============================
+        //  CAMBIAR TAG SEGÚN EL ROL
+        // =============================
+        if (newRol == RolJugador.Asesino)
+            gameObject.tag = "Asesino";
+        else
+            gameObject.tag = "Player";
 
-            if (hookObject != null)
-                hookObject.SetActive(newRol == RolJugador.Asesino);
+        // =============================
+        //  CONFIGURAR GANCHO
+        // =============================
+        if (newRol == RolJugador.Asesino)
+        {
+            if (isLocalPlayer)
+            {
+                if (grapplingHook) grapplingHook.enabled = true;
+                if (hookObject) hookObject.SetActive(true);
+            }
+            else if (isServer)
+            {
+                if (grapplingHook) grapplingHook.enabled = true;
+                if (hookObject) hookObject.SetActive(true);
+            }
+            else
+            {
+                if (grapplingHook) grapplingHook.enabled = false;
+                if (hookObject) hookObject.SetActive(true);
+            }
         }
         else
         {
-            // 🔹 Los jugadores remotos NO deben usar su propio gancho
-            if (grapplingHook != null)
-                grapplingHook.enabled = false;
+            if (grapplingHook) grapplingHook.enabled = false;
+            if (hookObject) hookObject.SetActive(false);
+        }
 
-            if (hookObject != null)
-                hookObject.SetActive(newRol == RolJugador.Asesino);
+        // =============================
+        //  CONFIGURAR HABILIDADES
+        // =============================
+        if (newRol == RolJugador.Asesino)
+        {
+            // Activa hitbox de asesino
+            if (killerHitbox) killerHitbox.SetActive(true);
+
+            // Desactiva vida del asesino
+            if (playerHealth) playerHealth.enabled = false;
+        }
+        else // Superviviente
+        {
+            // Activa vida
+            if (playerHealth) playerHealth.enabled = true;
+
+            // Desactiva hitbox del asesino
+            if (killerHitbox) killerHitbox.SetActive(false);
         }
     }
 
     public override void OnStartClient()
     {
-        // Asegurar que el cliente nuevo cargue el modelo correcto
         OnRolAsignado(rol, rol);
     }
 
     public override void OnStartLocalPlayer()
     {
-        // Cuando el jugador local se crea, asegurar que el gancho esté bien configurado
         OnRolAsignado(rol, rol);
     }
 }
