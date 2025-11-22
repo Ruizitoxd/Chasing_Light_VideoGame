@@ -11,60 +11,72 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private Animator animator;
 
+        // Sistema de partículas
+        public ParticleSystem ps;
+
         private void Start()
         {
             animator = GetComponent<Animator>();
+
+            ps.Stop(); // Aseguramos que inicie apagado
         }
 
-
-    private void Update()
-    {
-        //Evitar movimiento si no es el jugador actual
-        if (!isLocalPlayer) return;
-
-        Vector2 dir = Vector2.zero;
-
-        // Movimiento en X
-        if (Input.GetKey(KeyCode.A))
+        private void Update()
         {
-            dir.x = -1;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            dir.x = 1;
+            //Evitar movimiento si no es el jugador actual
+            if (!isLocalPlayer) return;
+
+            Vector2 dir =  new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+            bool isMoving = dir.sqrMagnitude > 0.01f;
+
+            // 🔥 Encender / apagar partículas según movimiento
+            if (isMoving && !ps.isPlaying)
+                ps.Play();
+            else if (!isMoving && ps.isPlaying)
+                ps.Stop();
+
+            // Escalar partículas según velocidad
+            ps.transform.localScale =
+                Vector3.MoveTowards(ps.transform.localScale, Vector3.one * dir.magnitude, 5 * Time.deltaTime);
+
+            // Dirección para animaciones
+            HandleAnimationDirection(dir);
+
+            // Actualiza dirección del humo
+            UpdateParticlesDirection(dir);
+
+            // Normalizar para que diagonales no sean más rápidas
+            dir.Normalize();
+
+            // Configurar animaciones
+            animator.SetBool("IsMoving", isMoving);
+
+            // Mover Rigidbody
+            GetComponent<Rigidbody2D>().velocity = speed * dir;
         }
 
-        // Movimiento en Y
-        if (Input.GetKey(KeyCode.W))
+        private void HandleAnimationDirection(Vector2 dir)
         {
-            dir.y = 1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            dir.y = -1;
+            if (dir.x < 0) animator.SetInteger("Direction", 3);
+            if (dir.x > 0) animator.SetInteger("Direction", 2);
+            if (dir.y > 0) animator.SetInteger("Direction", 1);
+            if (dir.y < 0) animator.SetInteger("Direction", 0);
         }
 
-        // Normalizar para que diagonales no sean más rápidas
-        dir.Normalize();
-
-        // Configurar animaciones
-        if (dir.magnitude > 0)
+        // Direcciona las particulas en la dirección opuesta al movimiento
+        void UpdateParticlesDirection(Vector2 moveDir)
         {
-            animator.SetBool("IsMoving", true);
+            if (moveDir.sqrMagnitude < 0.01f) return;
 
-            if (dir.y > 0) animator.SetInteger("Direction", 1);   // Arriba
-            else if (dir.y < 0) animator.SetInteger("Direction", 0); // Abajo
-            else if (dir.x > 0) animator.SetInteger("Direction", 2); // Derecha
-            else if (dir.x < 0) animator.SetInteger("Direction", 3); // Izquierda
-        }
-        else
-        {
-            animator.SetBool("IsMoving", false);
-        }
+            var velocity = ps.velocityOverLifetime;
+            velocity.enabled = true;
 
-        // Mover Rigidbody
-        GetComponent<Rigidbody2D>().velocity = speed * dir;
-    }
+            Vector2 opposite = -moveDir.normalized;
+
+            velocity.x = opposite.x * 3f;
+            velocity.y = opposite.y * 3f;
+        }
 
     }
 }

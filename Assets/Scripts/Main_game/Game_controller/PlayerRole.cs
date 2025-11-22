@@ -8,21 +8,26 @@ public class PlayerRole : NetworkBehaviour
     [SyncVar(hook = nameof(OnRolAsignado))]
     public RolJugador rol;
 
-    [Header("Modelos del jugador")]
-    public GameObject modeloAsesino;
-    public GameObject modeloSuperviviente;
+    [Header("Colores del jugador")]
+    public Color32 colorSuperviviente = new Color32(255, 255, 255, 255); // Cian superviviente
+    public Color32 colorAsesino = new Color32(255, 255, 0, 121); // Morado asesinio
+    private SpriteRenderer spriteRenderer;
 
     [Header("Arma / Habilidad del Asesino")]
     public GrapplingKnife_Mirror grapplingHook; // Versión apuñalamiento
     public GameObject hookObject;
 
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     void OnRolAsignado(RolJugador oldRol, RolJugador newRol)
     {
         // =============================
-        //  ACTIVAR MODELOS
+        //  ACTIVAR COLORES
         // =============================
-        modeloAsesino.SetActive(newRol == RolJugador.Asesino);
-        modeloSuperviviente.SetActive(newRol == RolJugador.Superviviente);
+        spriteRenderer.color = (newRol == RolJugador.Asesino) ? colorAsesino : colorSuperviviente;
 
         // =============================
         //  CAMBIAR TAG SEGÚN EL ROL
