@@ -134,7 +134,7 @@ TextureImporter:
       name: wasteland bg_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 192
         width: 32
         height: 32
@@ -176,7 +176,7 @@ TextureImporter:
       name: wasteland bg_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 192
         width: 32
         height: 32
@@ -197,7 +197,7 @@ TextureImporter:
       name: wasteland bg_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 192
         width: 32
         height: 32
@@ -239,7 +239,7 @@ TextureImporter:
       name: wasteland bg_6
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 192
         width: 32
         height: 32
@@ -281,7 +281,7 @@ TextureImporter:
       name: wasteland bg_8
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 160
         width: 32
         height: 32
@@ -302,7 +302,7 @@ TextureImporter:
       name: wasteland bg_9
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 160
         width: 32
         height: 32
@@ -323,7 +323,7 @@ TextureImporter:
       name: wasteland bg_10
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 160
         width: 32
         height: 32
@@ -344,7 +344,7 @@ TextureImporter:
       name: wasteland bg_11
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 160
         width: 32
         height: 32
@@ -386,7 +386,7 @@ TextureImporter:
       name: wasteland bg_13
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 160
         width: 32
         height: 32
@@ -428,7 +428,7 @@ TextureImporter:
       name: wasteland bg_15
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 128
         width: 32
         height: 32
@@ -449,7 +449,7 @@ TextureImporter:
       name: wasteland bg_16
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 128
         width: 32
         height: 32
@@ -470,7 +470,7 @@ TextureImporter:
       name: wasteland bg_17
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 128
         width: 32
         height: 32
@@ -491,7 +491,7 @@ TextureImporter:
       name: wasteland bg_18
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 128
         width: 32
         height: 32
@@ -512,7 +512,7 @@ TextureImporter:
       name: wasteland bg_19
       rect:
         serializedVersion: 2
-        x: 160
+        x: 159
         y: 128
         width: 32
         height: 32
@@ -533,7 +533,7 @@ TextureImporter:
       name: wasteland bg_20
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 128
         width: 32
         height: 32
@@ -575,7 +575,7 @@ TextureImporter:
       name: wasteland bg_22
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 96
         width: 32
         height: 32
@@ -596,7 +596,7 @@ TextureImporter:
       name: wasteland bg_23
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 96
         width: 32
         height: 32
@@ -617,7 +617,7 @@ TextureImporter:
       name: wasteland bg_24
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 96
         width: 32
         height: 32
@@ -638,7 +638,7 @@ TextureImporter:
       name: wasteland bg_25
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 96
         width: 32
         height: 32
@@ -659,7 +659,7 @@ TextureImporter:
       name: wasteland bg_26
       rect:
         serializedVersion: 2
-        x: 160
+        x: 159
         y: 96
         width: 32
         height: 32
@@ -680,7 +680,7 @@ TextureImporter:
       name: wasteland bg_27
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 96
         width: 32
         height: 32
@@ -701,7 +701,7 @@ TextureImporter:
       name: wasteland bg_28
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 64
         width: 32
         height: 32
@@ -722,7 +722,7 @@ TextureImporter:
       name: wasteland bg_29
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 64
         width: 32
         height: 32
@@ -743,7 +743,7 @@ TextureImporter:
       name: wasteland bg_30
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 64
         width: 32
         height: 32
@@ -764,7 +764,7 @@ TextureImporter:
       name: wasteland bg_31
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 64
         width: 32
         height: 32
@@ -785,7 +785,7 @@ TextureImporter:
       name: wasteland bg_32
       rect:
         serializedVersion: 2
-        x: 160
+        x: 159
         y: 64
         width: 32
         height: 32
@@ -806,7 +806,7 @@ TextureImporter:
       name: wasteland bg_33
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 64
         width: 32
         height: 32
@@ -829,7 +829,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 32
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -848,7 +848,7 @@ TextureImporter:
       name: wasteland bg_35
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 32
         width: 32
         height: 32
@@ -869,7 +869,7 @@ TextureImporter:
       name: wasteland bg_36
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 32
         width: 32
         height: 32
@@ -890,7 +890,7 @@ TextureImporter:
       name: wasteland bg_37
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 32
         width: 32
         height: 32
@@ -911,7 +911,7 @@ TextureImporter:
       name: wasteland bg_38
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 32
         width: 32
         height: 32
@@ -932,7 +932,7 @@ TextureImporter:
       name: wasteland bg_39
       rect:
         serializedVersion: 2
-        x: 160
+        x: 159
         y: 32
         width: 32
         height: 32
@@ -953,7 +953,7 @@ TextureImporter:
       name: wasteland bg_40
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 32
         width: 32
         height: 32
@@ -976,7 +976,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -995,7 +995,7 @@ TextureImporter:
       name: wasteland bg_42
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 0
         width: 32
         height: 32
@@ -1016,7 +1016,7 @@ TextureImporter:
       name: wasteland bg_43
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 0
         width: 32
         height: 32
@@ -1037,7 +1037,7 @@ TextureImporter:
       name: wasteland bg_44
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 0
         width: 32
         height: 32
@@ -1058,7 +1058,7 @@ TextureImporter:
       name: wasteland bg_45
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 0
         width: 32
         height: 32
@@ -1079,7 +1079,7 @@ TextureImporter:
       name: wasteland bg_46
       rect:
         serializedVersion: 2
-        x: 160
+        x: 159
         y: 0
         width: 32
         height: 32
@@ -1100,7 +1100,7 @@ TextureImporter:
       name: wasteland bg_47
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 0
         width: 32
         height: 32
