@@ -4982,6 +4982,7 @@ MonoBehaviour:
   grapplingHook: {fileID: 5834400445907539560}
   hookObject: {fileID: 3849851802776462441, guid: d2ef83c921515304c99597ce216b449f,
     type: 3}
+  characterController: {fileID: 883561459471542702}
 --- !u!114 &883561459471542702
 MonoBehaviour:
   m_ObjectHideFlags: 0

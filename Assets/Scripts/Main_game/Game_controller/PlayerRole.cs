@@ -1,5 +1,6 @@
 using Mirror;
 using UnityEngine;
+using Cainos.PixelArtTopDown_Basic;
 
 public enum RolJugador { Asesino, Superviviente }
 
@@ -9,48 +10,62 @@ public class PlayerRole : NetworkBehaviour
     public RolJugador rol;
 
     [Header("Colores del jugador")]
-    public Color32 colorSuperviviente = new Color32(255, 255, 255, 255); // Cian superviviente
-    public Color32 colorAsesino = new Color32(255, 255, 0, 121); // Morado asesinio
+    public Color32 colorSuperviviente = new Color32(255, 255, 255, 255);
+    public Color32 colorAsesino = new Color32(255, 255, 0, 121);
     private SpriteRenderer spriteRenderer;
 
     [Header("Arma / Habilidad del Asesino")]
-    public GrapplingKnife_Mirror grapplingHook; // Versión apuñalamiento
+    public GrapplingKnife_Mirror grapplingHook;
     public GameObject hookObject;
+    public TopDownCharacterController characterController;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    // ============================================================
+    // == LOG DE SPAWN EN SERVIDOR ================================
+    // ============================================================
+
+    public override void OnStartServer()
+    {
+        base.OnStartServer();
+        Debug.Log($"[SERVER] Player SPAWNED con rol inicial = {rol}");
+    }
+
+    // ============================================================
+    // == HOOK DEL ROL ============================================
+    // ============================================================
+
     void OnRolAsignado(RolJugador oldRol, RolJugador newRol)
     {
-        // =============================
-        //  ACTIVAR COLORES
-        // =============================
-        spriteRenderer.color = (newRol == RolJugador.Asesino) ? colorAsesino : colorSuperviviente;
+        Debug.Log($"[SERVER/CLIENT] HOOK ejecutado: rol cambia de {oldRol} → {newRol} (isServer={isServer})");
 
-        // =============================
-        //  CAMBIAR TAG SEGÚN EL ROL
-        // =============================
-        if (newRol == RolJugador.Asesino)
-            gameObject.tag = "Asesino";
-        else
-            gameObject.tag = "Player";
+        // Actualizar color
+        if (spriteRenderer != null)
+            spriteRenderer.color = (newRol == RolJugador.Asesino) ? colorAsesino : colorSuperviviente;
 
-        // =============================
-        //  CONFIGURAR HERRAMIENTAS DEL ASESINO
-        // =============================
-        if (newRol == RolJugador.Asesino)
+        // Tag
+        gameObject.tag = (newRol == RolJugador.Asesino) ? "Asesino" : "Player";
+
+        // Arma del asesino
+        bool esAsesino = newRol == RolJugador.Asesino;
+        if (esAsesino)
         {
-            if (grapplingHook) grapplingHook.enabled = true;
-            if (hookObject) hookObject.SetActive(true);
+            characterController.speed *= 1.2f; // El asesino es un 20% más rápido
         }
-        else
-        {
-            if (grapplingHook) grapplingHook.enabled = false;
-            if (hookObject) hookObject.SetActive(false);
-        }
+
+        if (grapplingHook) grapplingHook.enabled = esAsesino;
+        if (hookObject) hookObject.SetActive(esAsesino);
+
+        // ❌ NO REGISTRAMOS SUPERVIVIENTES AQUÍ
+        // El registro AHORA lo maneja el NetworkManager (mucho más seguro).
     }
+
+    // ============================================================
+    // == CLIENT INIT =============================================
+    // ============================================================
 
     public override void OnStartClient()
     {
@@ -62,5 +77,39 @@ public class PlayerRole : NetworkBehaviour
     {
         base.OnStartLocalPlayer();
         OnRolAsignado(rol, rol);
+    }
+
+    // ============================================================
+    // == MUERTE / ESCAPE =========================================
+    // ============================================================
+
+    [Server]
+    public void Morir()
+    {
+        Debug.Log($"[SERVER] Superviviente MUERE: netId={netId}");
+        Partida_controller.instancia.SupervivienteMuere(this);
+        gameObject.SetActive(false);
+    }
+
+    [Server]
+    public void Escapar()
+    {
+        Debug.Log($"[SERVER] Superviviente ESCAPA: netId={netId}");
+        Partida_controller.instancia.SupervivienteEscapa(this);
+        gameObject.SetActive(false);
+    }
+
+    // ============================================================
+    // == RECOGER FRAGMENTO =======================================
+    // ============================================================
+
+    [Command(requiresAuthority = false)]
+    public void CmdRecogerFragmento(GameObject fragmento)
+    {
+        Debug.Log($"[SERVER] Fragmento recogido por {netId}");
+        Partida_controller.instancia.SumarFragmentos();
+
+        if (fragmento != null)
+            NetworkServer.Destroy(fragmento);
     }
 }

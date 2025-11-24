@@ -5,21 +5,21 @@ using UnityEngine;
 public class MyNetworkManager : NetworkManager
 {
     [Header("Configuración de roles")]
-    [Tooltip("Mínimo de jugadores para iniciar la partida")]
     public int minPlayersToStart = 2;
-
-    [Tooltip("Máximo de jugadores permitidos en la partida")]
     public int maxPlayersAllowed = 5;
 
-    // Lista de PlayerRole en el servidor
-    [HideInInspector]
+    // Lista de todos los jugadores conectados (PlayerRole)
+    [HideInInspector] 
     public List<PlayerRole> jugadores = new List<PlayerRole>();
 
 
-    // Cuando un jugador se añade al servidor
+    // ============================================================
+    // == AL CONECTAR UN JUGADOR ==================================
+    // ============================================================
+
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
-        Debug.Log("🔵 OnServerAddPlayer() llamado (nuevo jugador entrando)");
+        Debug.Log("🔵 OnServerAddPlayer() llamado");
 
         base.OnServerAddPlayer(conn);
 
@@ -28,32 +28,36 @@ public class MyNetworkManager : NetworkManager
         if (pj != null)
         {
             jugadores.Add(pj);
-            Debug.Log($"🟢 Jugador agregado a la lista. Total jugadores: {jugadores.Count}");
+            Debug.Log($"🟢 Jugador agregado. Total: {jugadores.Count}");
         }
         else
         {
-            Debug.LogWarning("⚠️ El prefab NO tiene PlayerRole. NO se puede asignar rol.");
+            Debug.LogError("❌ El prefab del jugador NO tiene PlayerRole");
         }
 
         if (jugadores.Count > maxPlayersAllowed)
         {
-            Debug.LogWarning("⚠️ Se superó el máximo permitido de jugadores.");
+            Debug.LogWarning("⚠️ Se superó el máximo de jugadores permitidos");
         }
     }
 
 
-    // Remover jugador si se desconecta
+    // ============================================================
+    // == AL DESCONECTARSE UN JUGADOR =============================
+    // ============================================================
+
     public override void OnServerDisconnect(NetworkConnectionToClient conn)
     {
-        Debug.Log("🔴 OnServerDisconnect() llamado (jugador salió)");
+        Debug.Log("🔴 OnServerDisconnect() llamado");
 
         if (conn.identity != null)
         {
             PlayerRole pj = conn.identity.GetComponent<PlayerRole>();
+
             if (pj != null && jugadores.Contains(pj))
             {
                 jugadores.Remove(pj);
-                Debug.Log($"🟡 Jugador eliminado de la lista. Jugadores restantes: {jugadores.Count}");
+                Debug.Log($"🟡 Jugador eliminado. Quedan: {jugadores.Count}");
             }
         }
 
@@ -61,24 +65,31 @@ public class MyNetworkManager : NetworkManager
     }
 
 
-    // Limpiar al detener servidor
+    // ============================================================
+    // == SERVIDOR DETENIDO =======================================
+    // ============================================================
+
     public override void OnStopServer()
     {
-        Debug.Log("🧹 Servidor detenido. Limpiando lista de jugadores...");
+        Debug.Log("🧹 Limpiando lista de jugadores (OnStopServer)");
         jugadores.Clear();
         base.OnStopServer();
     }
 
 
-    // Método para asignar roles
+    // ============================================================
+    // == ASIGNACIÓN DE ROLES =====================================
+    // ============================================================
+
     [Server]
     public void AsignarRoles()
     {
         Debug.Log("🎲 AsignarRoles() llamado…");
 
-        if (jugadores == null) jugadores = new List<PlayerRole>();
+        if (jugadores == null)
+            jugadores = new List<PlayerRole>();
 
-        Debug.Log($"👥 Jugadores actuales: {jugadores.Count}");
+        Debug.Log($"👥 Jugadores detectados: {jugadores.Count}");
 
         if (jugadores.Count < minPlayersToStart)
         {
@@ -86,12 +97,16 @@ public class MyNetworkManager : NetworkManager
             return;
         }
 
+        // Elegir Asesino al azar
         int indexAsesino = Random.Range(0, jugadores.Count);
-        Debug.Log($"🔪 Asesino elegido aleatoriamente: index {indexAsesino}");
+        Debug.Log($"🔪 Index asesino: {indexAsesino}");
 
+        // Asignar roles
         for (int i = 0; i < jugadores.Count; i++)
         {
-            if (jugadores[i] == null)
+            PlayerRole pj = jugadores[i];
+
+            if (pj == null)
             {
                 Debug.LogWarning($"⚠️ Jugador null en índice {i}");
                 continue;
@@ -99,34 +114,40 @@ public class MyNetworkManager : NetworkManager
 
             if (i == indexAsesino)
             {
-                jugadores[i].rol = RolJugador.Asesino;
-                Debug.Log($"➡️ Jugador {i}: rol ASIGNADO = ASESINO");
+                pj.rol = RolJugador.Asesino;
+                Debug.Log($"➡️ Jugador {i} → ASESINO");
             }
             else
             {
-                jugadores[i].rol = RolJugador.Superviviente;
-                Debug.Log($"➡️ Jugador {i}: rol ASIGNADO = SUPERVIVIENTE");
+                pj.rol = RolJugador.Superviviente;
+                Debug.Log($"➡️ Jugador {i} → SUPERVIVIENTE");
+
+                // REGISTRARLO EN EL CONTROLADOR
+                Partida_controller.instancia.RegistrarSuperviviente(pj);
             }
         }
 
-        Debug.Log("✅ Roles asignados completamente.");
+        Debug.Log("✅ Roles asignados correctamente.");
     }
 
 
-    // Método utilitario para iniciar partida desde un botón
+    // ============================================================
+    // == BOTÓN PARA INICIAR PARTIDA ===============================
+    // ============================================================
+
     [Server]
     public void IntentarIniciarYAsignarRoles()
     {
-        Debug.Log("🚀 IntentarIniciarYAsignarRoles() llamado.");
+        Debug.Log("🚀 IntentarIniciarYAsignarRoles() llamado");
 
         if (jugadores.Count >= minPlayersToStart)
         {
-            Debug.Log($"🟢 Jugadores suficientes ({jugadores.Count}). Iniciando asignación…");
+            Debug.Log("🟢 Jugadores suficientes. Iniciando…");
             AsignarRoles();
         }
         else
         {
-            Debug.LogWarning($"⛔ No se puede iniciar partida: {jugadores.Count}/{minPlayersToStart} jugadores.");
+            Debug.LogWarning($"⛔ No se puede iniciar: {jugadores.Count}/{minPlayersToStart} jugadores.");
         }
     }
 }
