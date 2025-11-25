@@ -25,6 +25,10 @@ public class Partida_controller : NetworkBehaviour
     public int supervivientesEscapados = 0;
     public bool partidaFinalizada = false;
 
+    [Header("Interfaz")]
+    public CristalesTextConroller cristalesTextConroller;
+
+
     void Awake()
     {
         instancia = this;
@@ -66,6 +70,8 @@ public class Partida_controller : NetworkBehaviour
     {
         CantidadFragmentos++;
         Debug.Log($"🟦 Fragmento recogido: {CantidadFragmentos}/{FragmentosNecesarios}");
+
+        cristalesTextConroller.SetCristales(CantidadFragmentos);
 
         if (CantidadFragmentos >= FragmentosNecesarios)
             ActivarPortal();
