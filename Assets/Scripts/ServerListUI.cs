@@ -1,57 +1,44 @@
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using Mirror;
+using Mirror.Discovery;
 
 public class ServerListUI : MonoBehaviour
 {
-    public Transform content;  // referencia al Content del ScrollView
-    public GameObject serverEntryPrefab; // prefab de la fila
+    [Header("UI")]
+    public Transform content;
+    public GameObject filaPrefab;
 
-    // Esta lista simula servidores. Luego puedes reemplazarla por Mirror Discovery
-    private List<ServerInfo> servidores = new List<ServerInfo>();
+    Dictionary<long, ServerResponse> servidores = new();
 
-    void Start()
+    public void LimpiarLista()
     {
-        RefreshList();
-    }
+        foreach (Transform hijo in content)
+            Destroy(hijo.gameObject);
 
-    public void RefreshList()
-    {
-        // limpiar antes de agregar
-        foreach (Transform child in content)
-            Destroy(child.gameObject);
-
-        // ejemplo: datos falsos, luego será autodetectado
         servidores.Clear();
-        servidores.Add(new ServerInfo("Servidor 1", 1, 4));
-        servidores.Add(new ServerInfo("Servidor 2", 2, 4));
-        servidores.Add(new ServerInfo("Servidor PVP", 3, 6));
+    }
 
-        // instanciar filas
-        foreach (var server in servidores)
+    public void AgregarServidor(ServerResponse info)
+    {
+        if (servidores.ContainsKey(info.serverId)) return;
+
+        servidores[info.serverId] = info;
+
+        GameObject filaGO = Instantiate(filaPrefab, content);
+
+        // Obtiene el componente del prefab
+        var filaUI = filaGO.GetComponent<FilaServidorUI>();
+
+        // Configura la fila con la información del servidor
+        filaUI.Configurar(info);
+
+        // Botón llama a Conectar()
+        filaGO.GetComponent<Button>().onClick.AddListener(() =>
         {
-            GameObject entry = Instantiate(serverEntryPrefab, content);
-            entry.GetComponent<ServerEntryUI>().SetData(server);
-        }
-    }
-
-    public void GoBack()
-    {
-        this.gameObject.SetActive(false);
-    }
-}
-
-[System.Serializable]
-public class ServerInfo
-{
-    public string nombre;
-    public int jugadores;
-    public int max;
-
-    public ServerInfo(string nombre, int jugadores, int max)
-    {
-        this.nombre = nombre;
-        this.jugadores = jugadores;
-        this.max = max;
+            filaUI.Conectar();  
+        });
     }
 }
